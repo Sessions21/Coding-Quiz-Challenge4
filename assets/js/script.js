@@ -5,7 +5,13 @@ var pushButton = document.querySelector(".push-button");
 var questionHeading = document.querySelector(".question-heading");
 var questionContainer = document.querySelector(".question-container");
 var answerContainer = document.querySelector(".answer-container");
-var timerEl = document.querySelector(".timer")
+var timerEl = document.querySelector(".timer");
+var highscoresDiv = document.getElementById("highscores");
+var list = document.getElementById("list");
+var initials = document.getElementById("initials");
+var saveButton = document.getElementById("save");
+var mainDiv = document.getElementById("main-div")
+var userScore = 0;
 
 var questions = [
   {
@@ -59,6 +65,12 @@ function countdown() {
 
   function showQuestion() {
     answerContainer.innerHTML = "";
+    if (currentIndex === questions.length) {
+      alert("The quiz is finished!");
+      mainDiv.classList.add("hidden");
+      highscoresDiv.classList.remove("hidden");
+    return}
+
     var currentQuestion = questions[currentIndex];
     questionHeading.textContent = currentQuestion.question;
     for (var i = 0; i < currentQuestion.choices.length; i++) {
@@ -75,6 +87,7 @@ function countdown() {
 
   function checkAnswer() {
     if (this.value === questions[currentIndex].answer) {
+      userScore ++;
     }
     else {
       timeLeft -=5
@@ -85,3 +98,26 @@ function countdown() {
   }
 
   startButton.addEventListener("click", startQuiz);
+
+  var highscores = [];
+  if(localStorage.getItem("high scores")) {
+    highscores = JSON.parse(localStorage.getItem("high scores"))
+    for (let i = 0; i < highscores.length; i++) {
+      var li = document.createElement("li");
+      li.innerText = 'highscores[i].initials + ": " + highscores[i].score'
+      list.appendChild(li)
+    }
+  }
+
+  saveButton.addEventListener("click", function (){
+    var object ={
+      "initials": initials.value,
+      "score": userScore
+    }
+    highscores.push(object);
+    localStorage.setItem("high scores", JSON.stringify(highscores));
+    var li = document.createElement("li");
+    li.innerText = `${initials.value}: ${userScore}`
+    list.appendChild(li)
+    initials.value = ""
+  });
