@@ -104,8 +104,8 @@ function countdown() {
     highscores = JSON.parse(localStorage.getItem("high scores"))
     for (let i = 0; i < highscores.length; i++) {
       var li = document.createElement("li");
-      li.innerText = 'highscores[i].initials + ": " + highscores[i].score'
-      list.appendChild(li)
+      li.innerText = highscores[i].initials + ": " + highscores[i].score;
+      list.appendChild(li);
     }
   }
 

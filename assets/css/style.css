@@ -9,3 +9,8 @@ body {
 .hidden {
   display: none;
 }
+
+#main.div {
+  display: flex;
+  justify-content: center;
+}
