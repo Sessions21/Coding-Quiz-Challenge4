@@ -15,29 +15,29 @@ var userScore = 0;
 
 var questions = [
   {
-  question: "question one",
-  choices: ["choice one", "choice two", "choice three", "choice four"],
-  answer: "choice one"
+  question: "He is Frodo’s loyal friend who journeyed with him from Middle Earth to Mount Doom?",
+  choices: ["Boromir", "Elrond", "Samwise Gamgee", "Bilbo Baggins"],
+  answer: "Samwise Gamgee"
   },
   {
-  question: "question two",
-  choices: ["choice one", "choice two", "choice three", "choice four"],
-  answer: "choice three"
+  question: "Which actor played Samwise Gamgee?",
+  choices: ["Sean Astin", "Ashton Kutcher", "Tom Cruise", "Mike Meyers"],
+  answer: "Sean Astin"
   },
   {
-  question: "question three",
-  choices: ["choice one", "choice two", "choice three", "choice four"],
-  answer: "choice two"
+  question: "How many rings of power were made for the Elves, Dwarves, and Men?",
+  choices: ["One", "Five", "Five for the Elves, Two for Dwarves, and Eight for Men.", "Three for the Elves, Seven for Dwarves, and Nine for Men."],
+  answer: "Three for the Elves, Seven for Dwarves, and Nine for Men."
   },
   {
-  question: "question four",
-  choices: ["choice one", "choice two", "choice three", "choice four"],
-  answer: "choice one"
+  question: "Who was sent to Rivendell by Denethor to find answers about a dream he had?",
+  choices: ["Theoden", "Boromir", "Pippin", "Gandolf"],
+  answer: "Boromir"
   },
   {
-  question: "question five",
-  choices: ["choice one", "choice two", "choice three", "choice four"],
-  answer: "choice four"
+  question: "What is the name of the mountain where the Master Ring was made?",
+  choices: ["Mount Rainier", "Mount Vesuvius", "Mount Doom", "Mount Olympus"],
+  answer: "Mount Doom"
   }
 ]
 
@@ -117,7 +117,7 @@ function countdown() {
     highscores.push(object);
     localStorage.setItem("high scores", JSON.stringify(highscores));
     var li = document.createElement("li");
-    li.innerText = `${initials.value}: ${userScore}`
+    li.innerText = initials.value + ": " + userScore;
     list.appendChild(li)
     initials.value = ""
   });

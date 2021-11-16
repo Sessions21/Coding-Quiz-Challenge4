@@ -1,16 +1,32 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  border: 5px groove #B3001E;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 22px;
+  font-variant: small-caps;
+  text-shadow: 1px 2px 2px black;
+  border: 15px ridge #B3001E;
   justify-content: center;
   align-items: center;
-  
+  margin: 35px;
+  background-color: antiquewhite;
+  border-radius: 20px;
 }
 
 .hidden {
   display: none;
 }
 
-#main.div {
+header  {
   display: flex;
   justify-content: center;
+}
+
+.push-button {
+display: flex;
+justify-content: center;
+background-color: #b3b3b315;
+color: whitesmoke;
+}
+
+.start-button {
+color: black
 }
