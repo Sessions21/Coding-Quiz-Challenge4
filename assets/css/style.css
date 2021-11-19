@@ -56,3 +56,18 @@ color: whitesmoke;
   margin: 15px;
 }
 
+#initials {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  border-radius: 3px;
+}
+
+.quizBtn {
+  background-color: rgba(9, 85, 9, 0.336);
+  flex-direction: row;
+  margin: 10px;
+}
+
+.timer {
+  text-shadow: none;
+}
