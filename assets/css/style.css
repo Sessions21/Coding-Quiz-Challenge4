@@ -66,6 +66,7 @@ color: whitesmoke;
   background-color: rgba(9, 85, 9, 0.336);
   flex-direction: row;
   margin: 10px;
+  border-radius: 3px;
 }
 
 .timer {
